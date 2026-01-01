@@ -8,8 +8,10 @@ import Image from 'next/image';
 
 interface HomePageAboutSectionProps {
   pt?: string; // optional prop
+  about: string
+  mission: string
 }
-const HomePageAboutSection: React.FC<HomePageAboutSectionProps>= ({ pt = "" }) => {
+const HomePageAboutSection: React.FC<HomePageAboutSectionProps>= ({ pt = "", about, mission }) => {
     const [isOpen, setOpen] = useState<boolean>(false);
     return (
         <>
@@ -20,8 +22,8 @@ const HomePageAboutSection: React.FC<HomePageAboutSectionProps>= ({ pt = "" }) =
                             <div className="col-xl-8 col-lg-9 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
                                 <div className="about-title-area">
                                     <div className="section-title">
-                                        <span>About Our Story</span>
-                                        <h2>Our Story of Manufacturing Excellence Built on.</h2>
+                                        <span>Tentang Kami</span>
+                                        <h2>Solusi Geosintetik untuk Konstruksi Modern</h2>
                                     </div>
                                     <div className="video-and-content">
                                         <a data-fancybox="video-player" style={{ cursor: "pointer" }}
@@ -38,7 +40,7 @@ const HomePageAboutSection: React.FC<HomePageAboutSectionProps>= ({ pt = "" }) =
                                             </div>
                                         </a>
                                         <div className="content">
-                                            <p>Sed nisl eros, condimentum nec risus sit amet, finibus conguese.Fusen fringilla est libero, sed tempus urna feugiat eu. Curabitur eu feugiat ligu Suspendisse nectoraba porttitor velit go this week and more about.</p>
+                                            <p>{about}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -71,8 +73,8 @@ const HomePageAboutSection: React.FC<HomePageAboutSectionProps>= ({ pt = "" }) =
                                         <p>Sed nisl eros, condimentum nec risussit amet finibus cons sem fusce. Advantage of thes limited-time offers &amp; start.</p>
                                     </li>
                                     <li>
-                                        <h6>OUR MISSION</h6>
-                                        <p>Sed nisl eros, condimentum nec risussit amet finibus cons sem fusce. Advantage of thes limited-time offers &amp; start.</p>
+                                        <h6>MISI KAMI</h6>
+                                        <p>{mission}</p>
                                     </li>
                                 </ul>
                             </div>
