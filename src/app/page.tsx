@@ -22,30 +22,6 @@ import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/header/Header1";
 import Loading from "@/components/common/Loading";
 
-// --- 1. Definisi Tipe Data (Interface) ---
-// Sesuaikan struktur ini dengan respon JSON dari Backend Anda
-interface BannerData {
-  title: string;
-  image: string;
-  description: string;
-}
-
-interface ServiceData {
-  id: number;
-  name: string;
-  icon: string;
-}
-
-// Interface Utama untuk respon API
-interface HomeApiResponse {
-  banner?: BannerData;
-  services?: ServiceData[];
-  features?: any[]; // Ganti 'any' dengan tipe spesifik nanti
-  projects?: any[];
-  blogPosts?: any[];
-  // Tambahkan field lain sesuai respon API backend
-}
-
 export default function Home() {
   // --- 2. State dengan Typing ---
   const [data, setData] = useState<any | null>(null);
@@ -58,7 +34,7 @@ export default function Home() {
       try {
         setLoading(true);
         // Ganti URL dengan endpoint asli Anda
-        const response = await axios.get<HomeApiResponse>(
+        const response = await axios.get(
           "https://cms.intigeotekpratama.com/api/home-indopro?populate=*"
         );
 
@@ -78,9 +54,7 @@ export default function Home() {
 
   // --- 4. Loading & Error UI ---
   if (loading) {
-    return (
-      <Loading />
-    );
+    return <Loading />;
   }
 
   if (error) {
@@ -97,7 +71,12 @@ export default function Home() {
       <Header1 />
 
       {/* Kirim data ke props component (pastikan komponen Banner menerima props ini) */}
-      <Banner />
+      <Banner
+        bgDesktop={`https://cms.intigeotekpratama.com${data.data.attributes.banner.data.attributes.url}`}
+        bgSmall={`https://cms.intigeotekpratama.com${data.data.attributes.banner.data.attributes.formats.small.url}`}
+        bgLarge={`https://cms.intigeotekpratama.com${data.data.attributes.banner.data.attributes.formats.large.url}`}
+        bgMedium={`https://cms.intigeotekpratama.com${data.data.attributes.banner.data.attributes.formats.medium.url}`}
+      />
 
       <HomePageAboutSection
         about={data.data.attributes.about}

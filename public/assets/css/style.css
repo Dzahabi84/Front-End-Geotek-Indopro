@@ -7068,7 +7068,7 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
   }
 }
 .home1-banner-section .banner-wrapper {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../img/home1/home1-banner-bg.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), var(--bg-desktop);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 750px;
@@ -7081,6 +7081,13 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
 @media (max-width: 1699px) {
   .home1-banner-section .banner-wrapper {
     margin: 0 70px;
+        background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      var(--bg-large);
   }
 }
 @media (min-width: 1400px) and (max-width: 1599px) {
@@ -7088,6 +7095,13 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
     margin: 0 30px;
     padding: 70px 55px 70px 60px;
     min-height: 650px;
+        background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      var(--bg-large);
   }
 }
 @media (max-width: 1399px) {
@@ -7095,24 +7109,52 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
     margin: 0 20px;
     padding: 70px 45px 70px 50px;
     min-height: 650px;
+        background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      var(--bg-medium);
   }
 }
 @media (max-width: 1199px) {
   .home1-banner-section .banner-wrapper {
     margin: 0 10px;
     padding: 70px 35px 70px 40px;
+        background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      var(--bg-medium);
   }
 }
 @media (max-width: 991px) {
   .home1-banner-section .banner-wrapper {
     padding: 70px 20px 70px 20px;
     min-height: 620px;
+        background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      var(--bg-small);
   }
 }
 @media (max-width: 576px) {
   .home1-banner-section .banner-wrapper {
     margin: 0;
     padding: 60px 10px 60px 10px;
+        background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      var(--bg-small);
   }
 }
 .home1-banner-section .banner-wrapper .banner-content-wrap {
