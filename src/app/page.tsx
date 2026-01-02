@@ -20,6 +20,7 @@ import HomePageTeamSection from "@/components/factory-homepage/HomePageTeamSecti
 import HomePageTestimonialSection from "@/components/factory-homepage/HomePageTestimonialSection";
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/header/Header1";
+import Loading from "@/components/common/Loading";
 
 // --- 1. Definisi Tipe Data (Interface) ---
 // Sesuaikan struktur ini dengan respon JSON dari Backend Anda
@@ -57,10 +58,12 @@ export default function Home() {
       try {
         setLoading(true);
         // Ganti URL dengan endpoint asli Anda
-        const response = await axios.get<HomeApiResponse>("https://cms.intigeotekpratama.com/api/home-indopro?populate=*");
-        
+        const response = await axios.get<HomeApiResponse>(
+          "https://cms.intigeotekpratama.com/api/home-indopro?populate=*"
+        );
+
         setData(response.data);
-        console.log(response.data )
+        console.log(response.data);
         setError(null);
       } catch (err: any) {
         console.error("Error fetching data:", err);
@@ -76,9 +79,7 @@ export default function Home() {
   // --- 4. Loading & Error UI ---
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <p>Loading data...</p>
-      </div>
+      <Loading />
     );
   }
 
@@ -94,16 +95,19 @@ export default function Home() {
   return (
     <>
       <Header1 />
-      
+
       {/* Kirim data ke props component (pastikan komponen Banner menerima props ini) */}
-      <Banner /> 
-      
-      <HomePageAboutSection about={data.data.attributes.about} mission={data.data.attributes.mision} />
-      
+      <Banner />
+
+      <HomePageAboutSection
+        about={data.data.attributes.about}
+        mission={data.data.attributes.mision}
+      />
+
       {/* Contoh passing data: */}
       {/* <HomePageServiceSection services={data?.services} /> */}
       <HomePageServiceSection />
-      
+
       <HomePageFeatureSection name="Product" />
       <HomePageProjectSection />
       <HomePageTeamSection />
