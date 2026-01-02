@@ -4,6 +4,7 @@ import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 import Link from 'next/link'
 import Image from 'next/image';
+import { textToBulletList } from '@/utils/textToList';
 
 
 interface HomePageAboutSectionProps {
@@ -66,15 +67,15 @@ const HomePageAboutSection: React.FC<HomePageAboutSectionProps>= ({ pt = "", abo
                     <div className="row gy-md-5 gy-4">
                         <div className="col-lg-5 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div className="about-content">
-                                <p>Sed nisl eros, condimentum nec risus sit amet, finibus conguese. Fusen fringilla est libero, sed tempus urna feugiat eu. Curabitur eu feugiat ligu Suspendisse nectoraba porttitor velit go this week and more about. Garden Studios is a proud B Corp™ certified company - only the second sound stage campus in the world to achieve.</p>
+                                {/* <p>Sed nisl eros, condimentum nec risus sit amet, finibus conguese. Fusen fringilla est libero, sed tempus urna feugiat eu. Curabitur eu feugiat ligu Suspendisse nectoraba porttitor velit go this week and more about. Garden Studios is a proud B Corp™ certified company - only the second sound stage campus in the world to achieve.</p> */}
                                 <ul>
-                                    <li>
-                                        <h6>WHO WE ARE</h6>
+                                    {/* <li> */}
+                                        {/* <h6>WHO WE ARE</h6>
                                         <p>Sed nisl eros, condimentum nec risussit amet finibus cons sem fusce. Advantage of thes limited-time offers &amp; start.</p>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <h6>MISI KAMI</h6>
-                                        <p>{mission}</p>
+                                        <p>{textToBulletList(mission)}</p>
                                     </li>
                                 </ul>
                             </div>

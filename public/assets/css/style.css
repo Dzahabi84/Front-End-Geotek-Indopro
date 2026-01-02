@@ -7472,6 +7472,7 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
+  list-style: disc;
   margin-bottom: 0;
 }
 @media (max-width: 767px) {
@@ -7483,18 +7484,19 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
   padding: 0;
   margin: 0;
   list-style: none;
-  padding-top: 70px;
+  padding-top: 15px;
   max-width: 424px;
   width: 100%;
 }
+
 @media (max-width: 1399px) {
   .home1-about-section .about-content ul {
-    padding-top: 60px;
+    padding-top: 15px;
   }
 }
 @media (max-width: 1199px) {
   .home1-about-section .about-content ul {
-    padding-top: 45px;
+    padding-top: 15px;
   }
 }
 @media (max-width: 991px) {
@@ -7504,7 +7506,7 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
     width: 100%;
     max-width: unset;
     gap: 30px;
-    padding-top: 35px;
+    padding-top: 15px;
   }
 }
 @media (max-width: 767px) {
@@ -7520,16 +7522,16 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
   }
 }
 .home1-about-section .about-content ul li {
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 }
 @media (max-width: 1399px) {
   .home1-about-section .about-content ul li {
-    margin-bottom: 60px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 1199px) {
   .home1-about-section .about-content ul li {
-    margin-bottom: 45px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 991px) {
@@ -7544,7 +7546,7 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
   color: var(--title-color);
   font-family: var(--font-manrope);
   font-weight: 700;
-  font-size: 22px;
+  font-size: 40px;
   line-height: 1.2;
   margin-bottom: 15px;
 }
@@ -30951,3 +30953,39 @@ header.style-4 .mobile-logo-area .menu-close-btn:hover i {
     font-size: 25px;
   }
 }/*# sourceMappingURL=style.css.map */
+
+.mission-list {
+  margin: 0;
+  padding: 0;
+}
+
+/* FORCE list behavior back */
+li.mission-item {
+  display: list-item !important;
+  list-style-type: disc !important;
+  list-style-position: outside;
+  padding: 6px 0;
+  
+  margin-left: 1.25rem;     /* space for bullet */
+  margin-bottom: 0px;    /* tight vertical gap */
+  
+  font-size: 16px;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .mission-item {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .mission-item {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+}
